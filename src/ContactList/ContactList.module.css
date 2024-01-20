@@ -1,0 +1,119 @@
+/* .contactCnt {
+    border: 2px solid black;
+    width: 90%;
+}
+
+.row {
+    border-top: 2px solid black;
+}
+
+.cell {
+    display: inline-block;
+    width: 23%;
+    border-right: 2px solid black;
+}
+
+.cellStart {
+    display: inline-block;
+    width: 5%;
+    border-right: 2px solid black;
+}
+
+.cellEnd {
+    display: inline-block;
+    width: 23%;
+    border-right: 0;
+}
+
+.cellEnd img {
+    width: 1rem;
+    padding-right: 10px;
+}
+
+.cellList {
+    display: inline-flex;
+    width: 23%;
+    border-right: 2px solid black;
+    word-break: break-all;
+}
+
+span {
+    padding: 5px 0;
+} */
+
+table {
+    /* border-collapse: collapse; */
+    width: 100%;
+    /* color: #45f3ff; */
+    background-color: #dee1e1;
+    color: black;
+    border: 2px solid black;
+    font-size: 0.65em;
+}
+
+table, tr, td {
+    border: 1px solid white;
+    /* padding: 7.5px; */
+    padding: .1rem;
+}
+
+td img {
+    width: 5%;
+}
+
+table thead td {
+    font-weight: 700;
+    /* padding: 12.5px; */
+    padding: .8rem;
+    font-size: 0.725rem;
+}
+
+.cellNoIng {
+    /* padding: 0 20px; */
+    padding: 0 0.5rem;
+    /* display: flex;
+    justify-content: center; */
+}
+
+tbody td {
+    text-shadow: none;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editBtn, .delBtn {
+    width: 2.1rem;
+    height: 1.1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.editBtn:hover, .delBtn:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.fullDetails {
+    font-size: 0.7rem;
+    background-color: rgb(123, 244, 244);
+    border: 1px solid aqua;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    padding: 1%;
+    margin-left: 5%;
+}
+
+.fullDetails:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+p {
+    color: black;
+}

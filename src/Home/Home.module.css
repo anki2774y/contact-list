@@ -1,0 +1,38 @@
+.goForm {
+    color: black;
+    cursor: pointer;
+    transition: transform 1s;
+    display: flex;
+    align-items: center;
+}
+
+.goForm:hover {
+    transform: scale(1.05);
+}
+
+.goForm span {
+    padding-left: 0.5%;
+}
+
+.goForm svg {
+    height: 2%;
+    width: 2%;
+}
+
+.homeCnt {
+    width: 100%;
+    margin: 0 10rem;
+}
+
+.carouselOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Adjust the z-index to ensure it's on top of other elements */
+}
