@@ -1,27 +1,27 @@
 import axios from "axios";
 import styles from "./ContactList.module.css";
+import { toast } from "react-toastify";
+import { FaUserEdit } from 'react-icons/fa';
+import { MdDelete } from "react-icons/md";
 
-// to do :: add border-box style and in circle form as i am using it in edit and delete button
 function ContactList(props) {
 
     const { contactList, setContactList, 
-        setShowForm, setInputValues, 
-        setShowFullDetails, edit, setEdit, setData,  } = props;
+        setShowForm, setShowFullDetails, setEdit, setData } = props;
 
     const handleDelContact = (e, id) => {
         e.stopPropagation();
         axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
             .then((res) => {
-                console.log('Contact deleted successfully:', res.data);
                 // You may want to update the contactList state to reflect the changes
                 setContactList(prevList => prevList.filter(contact => contact.id !== id));
+                toast.success("Contact Deleted Successfully");
             })
             .catch((error) => {
                 console.error("Error deleting contact:", error);
+                toast.error("Error while deleting contact");
             });
     };    
-
-    
 
     const handleEditContact =(e, id) => {
         e.stopPropagation();
@@ -31,7 +31,6 @@ function ContactList(props) {
     }
 
     const handleOpenDetails = (e, contactId) => {
-        // console.log("ID :: ", contactList[contactId]);
         setData(contactId);
         setShowFullDetails(true);
     };
@@ -39,9 +38,11 @@ function ContactList(props) {
 
     return (
         <>
-            <p> ContactList </p>
             <table>
                 <thead>
+                    <tr className={styles.contactsHead}>
+                        <td colSpan={5}> Contacts </td>
+                    </tr>
                     <tr>
                         <td className={styles.cellNoIng}> ID </td>
                         <td className={styles.cell}> Name </td>
@@ -60,16 +61,8 @@ function ContactList(props) {
                                     <td className={styles.cellList}> {list.email} </td>
                                     <td className={styles.cellList}> {list.phone} </td>
                                     <td className={styles.action}> 
-                                        <img 
-                                            className={styles.editBtn} 
-                                            src="https://cdn-icons-png.flaticon.com/128/10336/10336582.png" 
-                                            onClick={(e)=> handleEditContact(e, index)}
-                                        />
-                                        <img 
-                                            className={styles.delBtn} 
-                                            src="https://cdn-icons-png.flaticon.com/128/6711/6711573.png"                                             
-                                            onClick={(e)=> handleDelContact(e, list.id)}
-                                        />
+                                        <FaUserEdit className={styles.editBtn} onClick={(e)=> handleEditContact(e, index)}  />
+                                        <MdDelete className={styles.delBtn} onClick={(e)=> handleDelContact(e, list.id)} />
                                         <button className={styles.fullDetails} onClick={(e)=> handleOpenDetails(e, index)} > Check Full Details </button>
                                     </td>
                                 </tr>

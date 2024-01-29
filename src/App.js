@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home/Home';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -37,9 +38,7 @@ function App() {
   useEffect(() => {    
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then((res) => {
-          console.log("Contact LIst ;: ", res.data);
           setContactList(res.data);
-          console.log("Contact Length ;: ", contactList.length);
       })
       .catch((error) => {
           console.error("Error fetching data:", error);
@@ -53,7 +52,6 @@ function App() {
     const fullName = contactName;
     const nameParts = fullName.split(" ");
 
-    console.log("Names::: ", nameParts);
     let firstName, lastName;
 
     if (nameParts.length === 1) {
@@ -86,8 +84,6 @@ function App() {
     }));
   }
 
-  console.log("Data :: ", contactList);
-
   return (
     <>
       <div className="App">
@@ -102,7 +98,6 @@ function App() {
           setData={setData}
           editId={editId} setEditId={setEditId}
         />
-        
       </div>
     </>
   );

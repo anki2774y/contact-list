@@ -1,10 +1,8 @@
+import { Bounce, ToastContainer } from "react-toastify";
 import ContactDetails from "../ContactDetails/ContactDetails";
 import ContactList from "../ContactList/ContactList";
 import Form from "../Form/Form";
 import styles from "./Home.module.css";
-import { IoArrowRedoCircleOutline  } from "react-icons/io5";
-
-
 
 function Home(props) {
     
@@ -21,7 +19,6 @@ function Home(props) {
         <>
             <div className={styles.homeCnt}>
                 <div className={styles.goForm} onClick={()=>setShowForm(!showForm)}>
-                    <IoArrowRedoCircleOutline  /> 
                     <span> 
                         Create new Contact details 
                     </span> 
@@ -52,7 +49,7 @@ function Home(props) {
                     )
                 }
 
-{
+                {
                     showFullDetails &&
                     (
                         <div className={styles.carouselOverlay}>
@@ -61,6 +58,18 @@ function Home(props) {
                     )
                 }
 
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    theme="light"
+                    transition={Bounce}
+                ></ToastContainer>
             </div>
         </>
     )

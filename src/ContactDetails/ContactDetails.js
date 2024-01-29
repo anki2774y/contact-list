@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEdit, setShowForm }) {
 
-    const hasValue = inputValues.firstName.trim() !== "";
-
     function handleCloseDetails() {
         setShowFullDetails(false);
         setInputValues("");
@@ -25,14 +23,14 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.firstName} name="firstName" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.firstName} name="firstName" autoComplete="off" />
                                 <span className={styles.text}> First Name </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.lastName} name="lastName" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.lastName} name="lastName" autoComplete="off" />
                                 <span className={styles.text}> Last Name </span>
                                 <span className={styles.line}></span>
                             </div>
@@ -41,14 +39,14 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.userName} name="userName" required="required" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.userName} name="userName" required="required" autoComplete="off" />
                                 <span className={styles.text}> Username </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="email" value={inputValues.email} name="email" required="required" />
+                                <input className={styles.inputDetail} type="email" value={inputValues.email} name="email" required="required" autoComplete="off" />
                                 <span className={styles.text}> Email </span>
                                 <span className={styles.line}></span>
                             </div>
@@ -57,7 +55,7 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.phone} name="phone" required="required"  />
+                                <input className={styles.inputDetail} type="text" value={inputValues.phone} name="phone" required="required" autoComplete="off" />
                                 <span className={styles.text}> Phone </span>
                                 <span className={styles.line}></span>
                             </div>
@@ -69,14 +67,14 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.street} name="street" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.street} name="street" autoComplete="off" />
                                 <span className={styles.text}> Street </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.suite} name="suite" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.suite} name="suite" autoComplete="off" />
                                 <span className={styles.text}> Suite </span>
                                 <span className={styles.line}></span>
                             </div>
@@ -85,14 +83,14 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.city} name="city" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.city} name="city" autoComplete="off" />
                                 <span className={styles.text}> City </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.zipcode} name="zipcode" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.zipcode} name="zipcode" autoComplete="off" />
                                 <span className={styles.text}> Zipcode </span>
                                 <span className={styles.line}></span>
                             </div>
@@ -101,33 +99,33 @@ function ContactDetails({ inputValues, setInputValues, setShowFullDetails, setEd
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.latitude} name="latitude" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.latitude} name="latitude" autoComplete="off" />
                                 <span className={styles.text}> Latitude </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.longitude} name="longitude" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.longitude} name="longitude" autoComplete="off" />
                                 <span className={styles.text}> Longitude </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                     </div>
                     <div className={styles.form} >
-                        <p> Add Company Details </p>
+                        <p> Company Details </p>
                     </div>
                     <div className={styles.nameCnt}>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.compName} name="compName"  />
+                                <input className={styles.inputDetail} type="text" value={inputValues.compName} name="compName" autoComplete="off" />
                                 <span className={styles.text}> Name </span>
                                 <span className={styles.line}></span>
                             </div>
                         </div>
                         <div className={styles.col}>
                             <div className={styles.inputBox}>
-                                <input type="text" value={inputValues.websiteUrl} name="websiteUrl" />
+                                <input className={styles.inputDetail} type="text" value={inputValues.websiteUrl} name="websiteUrl" autoComplete="off" />
                                 <span className={styles.text}> Website URL   </span>
                                 <span className={styles.line}></span>
                             </div>
