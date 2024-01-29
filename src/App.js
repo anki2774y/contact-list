@@ -1,9 +1,7 @@
-import Form from './Form/Form';
 import './App.css';
 import Home from './Home/Home';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ToastContainer } from 'react-toastify';
 
 function App() {
 
